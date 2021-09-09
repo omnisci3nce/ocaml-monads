@@ -82,6 +82,13 @@ module ListF : (Functor with type 'a t = 'a list) = struct
   let fmap f = List.map f
 end
 
+module OptionF = struct
+  type 'a t = 'a option
+  let fmap f = function
+    | Some x -> Some (f x)
+    | None -> None
+end
+
 
 (* --------------------------------- *)
 (** Monads *)
