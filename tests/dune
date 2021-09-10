@@ -1,4 +1,8 @@
 (tests
-  (names functor_tests)
+  (names
+    monoid_tests
+    functor_tests
+    monad_tests
+    comonad_tests)
   (libraries alcotest lib)
 )

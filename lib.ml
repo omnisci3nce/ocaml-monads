@@ -114,3 +114,25 @@ end
 
 (* module Writer : Monad *)
 (* module Promise : Monad *)
+(* module State : Monad *)
+
+(** Comonad *)
+
+(* Comonads can model context-dependent sequential computations. *)
+
+module type Comonad = sig
+  type 'a t
+
+  val extract : 'a t -> 'a  
+
+  val extend : ('a t -> 'b) -> ('a t -> 'b t)
+end
+
+(* Zipper - sequence of elements that represents the idea of a 'current' or 'focused' element,
+            allowing it to move left and right. *)
+(* module Zipper : Comonad = struct
+  type 'a t = 'a list
+
+end *)
+
+(* Store -  *)
